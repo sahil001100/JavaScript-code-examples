@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    position: relative;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Add burger menu styles */
+
+
+.links{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    visibility: hidden;
+}
+.links span {
+    display: block;
+    height: 1px;
+    width: 35px;
+    background-color: #9485857c;
+    border: 2px solid #b04848;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    
+    
+}
+.links span:nth-child(1) {
+    
+    transform: translateY(1px);
+    
+}
+
+.links span:nth-child(2) {
+    transform: translateY(13px);
+}
+
+.links span:nth-child(3) {
+    transform: translateY(25px);
+}
+
+@media (max-width: 768px) {
+    body {
+        position: relative;
+    }
+    nav {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100%;
+       justify-content: center;
+    }
+    .links {
+        visibility: visible;
+        
+    }
+    
+    .nav-links li {
+        display: block;
+        width: 100%;
+        margin: 4px 0;
+    }
+    .nav-links li a{
+        padding: 12px 16px;
+        text-decoration: none;
+        color: #333;
+        display: block;
+    }
+    .nav-links li a:hover{
+        padding: 12px 16px;
+        text-decoration: underline;
+        color: #392ae1;
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .active{
+        padding-top: 150px;
+        visibility: visible;
+        top: 20px;
+        display: block;
+        height: 100vw;
+        transition: all 0.9s ease;
+    }
+}
+
+/* header section..
+*/
+.header{
+    background-image: url();
+}

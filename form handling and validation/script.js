@@ -16,7 +16,12 @@ form.addEventListener('submit', (e) =>{
         alert("Please fill in a valid email.");
     } else {
         alert("Form submitted successfully!");
-    }
+    };
 
     
 });
+// real time input events
+    const inp = document.querySelector('#fname');
+    inp.addEventListener('input', (e) =>{
+        console.log("U typed: ", e.target.value);
+    });

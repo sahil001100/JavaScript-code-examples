@@ -1,0 +1,7 @@
+:root {
+    --theme-color:#175ee2;
+}
+body{
+    background-color: var(--theme-color);
+    color: rgb(122, 43, 43);
+}

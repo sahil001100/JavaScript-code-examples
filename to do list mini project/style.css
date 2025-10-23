@@ -1,0 +1,21 @@
+
+.todo-container {
+    width: 300px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    background: #f0f0f0;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}

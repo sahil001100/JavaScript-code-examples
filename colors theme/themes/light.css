@@ -1,5 +1,5 @@
 :root {
-    --theme-color:#25e3ca;
+    --theme-color:#d9e7e5;
 }
 body{
     background-color: var(--theme-color);

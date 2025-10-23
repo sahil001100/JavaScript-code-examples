@@ -9,9 +9,11 @@ addTask.addEventListener("click", () => {
     const li = document.createElement('li');
     li.innerHTML = `
         <span class="task-text">${taskText}</span>
-        <button class="delete-btn"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
+        <button class="delete-btn">X</button>
     `;
 
     taskList.appendChild(li);
     taskInput.value = "";
 });
+
+

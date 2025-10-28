@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <!-- <div class="box"></div> -->
+
+    <form action="" id="LoginForm">
+        <label for="">
+            <input type="text" name="username" placeholder="Username">
+        </label>
+        <br>
+        <label for="">
+            <input type="password" name="password" placeholder="Password">
+        </label>
+        <button class="button-86 box " type="submit">Login</button>
+    </form>
+    <!-- HTML !-->
+
+
+<script>
+const form = document.getElementById('loginForm');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const submitBtn = document.getElementById('submitBtn');
+
+submitBtn.addEventListener('mouseover', () => {
+  const isUsernameEmpty = username.value.trim() === '';
+  const isPasswordEmpty = password.value.trim() === '';
+
+  if (isUsernameEmpty || isPasswordEmpty) {
+    submitBtn.classList.add('move');
+  } else {
+    submitBtn.classList.remove('move');
+  }
+});
+
+</script>
+</body>
+</html>

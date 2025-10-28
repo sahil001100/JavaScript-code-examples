@@ -19,15 +19,15 @@
         <label for="">
             <input type="password" name="password" placeholder="Password">
         </label>
-        <button class="button-86 box " type="submit">Login</button>
+        <button class="button-86 box " type="submit" id="submitBtn">Login</button>
     </form>
     <!-- HTML !-->
 
 
 <script>
 const form = document.getElementById('loginForm');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
+const username = document.querySelector('input[name="username"]');
+const password = document.querySelector('input[name="password"]');
 const submitBtn = document.getElementById('submitBtn');
 
 submitBtn.addEventListener('mouseover', () => {
@@ -35,7 +35,7 @@ submitBtn.addEventListener('mouseover', () => {
   const isPasswordEmpty = password.value.trim() === '';
 
   if (isUsernameEmpty || isPasswordEmpty) {
-    submitBtn.classList.add('move');
+    submitBtn.classList.toggle('move');
   } else {
     submitBtn.classList.remove('move');
   }

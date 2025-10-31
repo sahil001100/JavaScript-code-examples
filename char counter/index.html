@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Character Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    .counter {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .counter.warning {
+      color: #d9534f;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Live Character Counter</h2>
+  <textarea id="message" maxlength="250" placeholder="Type your message..."></textarea>
+  <div class="counter" id="charCount"> 0 / 250 characters</div>
+
+  <script>
+    const textarea = document.getElementById('message');
+    const counter = document.getElementById('charCount');
+    const maxLength = textarea.getAttribute('maxlength');
+
+    textarea.addEventListener('input', () => {
+      const length = textarea.value.length;
+      counter.textContent = `${length} / ${maxLength} characters`;
+      counter.classList.toggle('warning', length > maxLength * 0.9);
+      //length > maxLength * 0.9: If the user has typed more than 90% of the 
+      // allowed characters, the 'warning' class is added to the counter element.
+    });
+  </script>
+
+</body>
+</html>

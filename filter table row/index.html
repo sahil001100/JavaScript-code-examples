@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Table Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    tr.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Filterable Table</h2>
+  <input type="text" id="searchInput" placeholder="Search table...">
+
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Profession</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alice</td><td>USA</td><td>Engineer</td>
+    </tr>
+      <tr>
+        <td>Bob</td><td>Canada</td><td>Designer</td>
+      </tr>
+      <tr>
+        <td>Charlie</td><td>UK</td><td>Developer</td>
+      </tr>
+      <tr>
+        <td>Diana</td><td>Germany</td><td>Architect</td>
+      </tr>
+      <tr>
+        <td>Eva</td><td>France</td><td>Scientist</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const tableRows = document.querySelectorAll('#dataTable tbody tr');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+
+      tableRows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.classList.toggle('hidden', !rowText.includes(query));
+        // !rowText.includes(query): This checks if the row text does
+        // not include the search query the result will be true add hidden class.
+      });
+    });
+  </script>
+
+</body>
+</html>

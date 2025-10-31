@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+    .gallery {
+      max-width: 600px;
+      margin: auto;
+      position: relative;
+    }
+    img {
+      width: 100%;
+      height: 500px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .controls {
+      margin-top: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Image Gallery Viewer</h2>
+  <div class="gallery">
+    <img id="galleryImage" src="" alt="Gallery Image">
+  </div>
+  <div class="controls">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const images = [
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
+      '4.jpg'
+    ];
+
+    let currentIndex = 0;
+    const galleryImage = document.getElementById('galleryImage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateImage() {
+      galleryImage.src = images[currentIndex];
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === images.length - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateImage();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < images.length - 1) {
+        // images.length - 1: why -1 ? Because array index starts at 0 and length starts from 1.
+        currentIndex++;
+        updateImage();
+      }
+    });
+
+    // Initialize
+    updateImage();
+  </script>
+
+</body>
+</html>

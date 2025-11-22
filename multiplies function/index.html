@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to multiply any number of inputs
+        function multiplyAll(...numbers) {
+        return numbers.reduce((product, num) => product * num, 1);
+        }
+
+// Example usage:
+        console.log(multiplyAll(2, 3));        // 6
+        console.log(multiplyAll(2, 3, 4));     // 24
+        
+       
+
+    </script>
+</body>
+</html>
